@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>X-Reset: Scaling Object-Centric Reinforcement Learning via Cross-Embodiment Resets</title>
+  <meta name="description" content="X-Reset uses human hand-object demonstrations as resets for object-centric reinforcement learning. Explore the task, interact with the method, and browse recorded policies across robots and domains.">
+  <meta name="theme-color" content="#006CFA">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="X-Reset: Scaling Object-Centric Reinforcement Learning via Cross-Embodiment Resets">
+  <meta property="og:description" content="Human demonstrations as resets for generalist dexterous manipulation.">
+  <meta property="og:image" content="assets/figures/output_teaser.png">
+  <link rel="icon" href="assets/brand/favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/brand/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/native-explainer.css">
+  <link rel="stylesheet" href="assets/css/gallery.css">
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/site.js" type="module"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-pill">
+      <a class="brand-mark" href="#top" aria-label="X-Reset home"><span class="brand-word">X-Reset</span></a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="nav" aria-expanded="false"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="#abstract">Abstract</a><a href="#overview">The task</a><a href="#approach">Method</a><a href="#rollouts">Rollouts</a><a href="#recovery">Recovery</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="paper-title">
+      <div class="wide">
+        <div class="hero-intro">
+          <p class="eyebrow">Applied Intuition · Research</p>
+          <h1 id="paper-title"><span class="accent">X-Reset:</span> Scaling Object-Centric Reinforcement Learning via Cross-Embodiment Resets</h1>
+          <div class="hero-meta">
+            <p class="byline"><span class="names">Prithwish Dan<sup>1</sup></span>, <span class="names">Chenyang Ma<sup>1,2,*</sup></span>, <span class="names">Wei Zhan<sup>1,3,†</sup></span></p>
+            <p class="affil"><span><sup>1</sup>Applied Intuition</span><span><sup>2</sup>University of North Carolina at Chapel Hill</span><span><sup>3</sup>University of California, Berkeley</span></p>
+            <p class="affil corresponding"><span><sup>*</sup>Work done during internship at Applied Intuition.</span><span><sup>†</sup>Corresponding author</span></p>
+            <div class="actions" aria-label="Paper resources">
+              <a class="btn btn-primary" href="assets/paper/x-reset.pdf" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a>
+              <a class="btn" href="https://arxiv.org/abs/2609.35715" target="_blank" rel="noopener">arXiv <span aria-hidden="true">↗</span></a>
+              <button class="btn btn-disabled" type="button" disabled>Code (Coming Soon)</button>
+              <button id="bibtex-btn" class="btn" type="button" data-bibtex-src="bibtex-src">BibTeX</button>
+            </div>
+          </div>
+        </div>
+        <div class="paper-abstract" id="abstract">
+          <h2>Abstract</h2>
+          <p>Reinforcement learning (RL) in simulation can train dexterous manipulation policies without robot demonstrations, but training a single generalist policy with task-agnostic rewards faces a severe exploration problem: approaching, grasping, and reorienting diverse objects with many degrees of freedom is difficult to discover from scratch. Prior works make exploration tractable with high-quality robot demonstrations, per-task reward shaping, or by restricting policies to narrow modes of behavior. We propose X-Reset, a framework that instead resolves exploration with human hand-object demonstrations. Rather than imitating or tracking retargeted human motion, X-Reset kinematically retargets hand-object states to noisy robot states, filters out states that are unstable in simulation, and samples the remainder as resets during RL training with general-purpose object-centric rewards. The resulting policy depends only on object state and goal, with demonstrations entering training through the reset distribution. We show that X-Reset trains generalist policies on 20 objects across three embodiments—a 22-DoF hand on two different arms and a parallel-jaw gripper—and resolves the exploration challenges of RL from scratch. X-Reset scales with the number of training objects, generalizes to unseen objects, can learn from imperfect hand-pose estimates, and transfers behaviors zero-shot from sim-to-real.</p>
+        </div>
+      </div>
+    </section>
+    <section id="overview" aria-labelledby="overview-title">
+      <div class="wide">
+        <div class="section-intro"><h2 id="overview-title">How do we make generalist RL training feasible?</h2></div>
+        <figure class="short-demo">
+          <div class="sim-grid-labels" aria-hidden="true"><span>UR7e + Sharpa</span><span>KUKA + Sharpa</span><span>UR7e + Robotiq</span></div>
+          <picture id="sim-grid">
+            <source media="(prefers-reduced-motion: reduce)" srcset="assets/video/sim-grid-still.png">
+            <img src="assets/video/sim-grid.gif" width="960" height="540" loading="lazy" alt="Nine simulated manipulation rollouts: UR7e + Sharpa in the left column, KUKA + Sharpa in the middle, and UR7e + Robotiq on the right. Each freezes at its success pose; the complete grid holds for 2.5 seconds before repeating.">
+          </picture>
+          <figcaption class="sim-grid-caption"><button id="sim-grid-toggle" class="btn" type="button" hidden>Show still</button></figcaption>
+        </figure>
+      </div>
+    </section>
+<noscript>
+  <style>
+    .native-explainer [data-explainer-tabs] { display: none; }
+    .native-explainer [data-explainer-panel][hidden] { display: block; }
+    .native-explainer [data-explainer-panel] + [data-explainer-panel] { margin-top: var(--space-5); padding-top: var(--space-4); border-top: 1px solid var(--gray-line); }
+  </style>
+</noscript>
+<section id="task" class="native-explainer" aria-label="The task and why resets help">
+  <div class="wide" data-explainer>
+    <div class="ne-tabs" role="tablist" aria-label="Understand the task" data-explainer-tabs>
+      <button id="ne-task-tab" type="button" role="tab" aria-selected="true" aria-controls="ne-task-panel">The task</button>
+      <button id="ne-resets-tab" type="button" role="tab" aria-selected="false" aria-controls="ne-resets-panel" tabindex="-1">Why resets?</button>
+    </div>
+    <div id="ne-task-panel" class="ne-panel" role="tabpanel" aria-labelledby="ne-task-tab" tabindex="0" data-explainer-panel>
+      <div class="ne-explanation-grid">
+        <div class="ne-copy">
+          <h2 class="ne-task-heading">Bring the object to its goal pose.</h2>
+          <p>A robot must approach, grasp, and reorient the object. A generalist policy does this across different objects; each robot embodiment has its own policy.</p>
+          <p>The reward measures progress toward the <strong>object’s position and orientation</strong>, rather than asking the robot to copy a human motion.</p>
+          <ol class="ne-task-actions" aria-label="Manipulation task">
+            <li>Approach</li><li>Grasp</li><li>Reorient</li>
+          </ol>
+        </div>
+        <figure class="ne-goal-diagram">
+          <div class="ne-pose-pair">
+            <div class="ne-pose">
+              <p class="ne-label">Current pose</p>
+              <svg viewBox="640 -100 1120 1200" role="img" aria-label="Scissors at their current pose, with three surface keypoints">
+                <image href="assets/storyboard/source/figures/assets/teaser/states/object_start.png" width="2400" height="1000"/>
+                <g class="ne-keypoints"><circle cx="1496.738" cy="45.269" r="24"/><circle cx="919.884" cy="685.694" r="24"/><circle cx="1297.232" cy="880.018" r="24"/></g>
+              </svg>
+            </div>
+            <span class="ne-flow-arrow" aria-hidden="true">→</span>
+            <div class="ne-pose">
+              <p class="ne-label">Goal pose</p>
+              <svg viewBox="640 -100 1120 1200" role="img" aria-label="The same scissors rotated 45 degrees to illustrate a goal pose, with corresponding surface keypoints">
+                <g transform="rotate(45 1200 500)">
+                  <image href="assets/storyboard/source/figures/assets/teaser/states/object_start.png" width="2400" height="1000"/>
+                  <g class="ne-keypoints"><circle cx="1496.738" cy="45.269" r="24"/><circle cx="919.884" cy="685.694" r="24"/><circle cx="1297.232" cy="880.018" r="24"/></g>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <figcaption><span class="ne-caption-label">Object-centric reward.</span> Reduce the distance between corresponding current and goal keypoints. These poses illustrate the objective, not a recorded trajectory.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div id="ne-resets-panel" class="ne-panel" role="tabpanel" aria-labelledby="ne-resets-tab" tabindex="0" data-explainer-panel hidden>
+      <div class="ne-panel-intro">
+        <h2 class="ne-task-heading">The reward is simple. Discovering it is not.</h2>
+        <p>From an ordinary start, the policy must discover a useful grasp before it can learn to reorient. Occasionally starting from a retargeted hand–object state exposes later stages of manipulation during training.</p>
+      </div>
+      <div class="ne-evidence-pair">
+        <figure class="ne-evidence">
+          <h3>Exploration from scratch</h3>
+          <video controls loop playsinline preload="none" width="1280" height="720" src="assets/video/clips/wood-block-exploration.mp4" poster="assets/storyboard/source/prototype-posters/wood-block-start.jpg" aria-label="Wood-block exploration from an ordinary reset, three-second excerpt"></video>
+          <figcaption><span class="ne-caption-label">Ordinary reset · wood block.</span> The policy explores without a useful grasp. This selected failure illustrates the exploration bottleneck.</figcaption>
+        </figure>
+        <figure class="ne-evidence">
+          <h3>Retargeted hand–object reset</h3>
+          <video controls loop playsinline preload="none" width="1280" height="720" src="assets/video/clips/banana-reset.mp4" poster="assets/video/clips/banana-reset.jpg" aria-label="Banana exploration from a hand-object reset, three-and-a-half-second excerpt"></video>
+          <figcaption><span class="ne-caption-label">Hand–object reset · banana.</span> Start from an interaction state suggested by a human demonstration, then let the policy explore.</figcaption>
+        </figure>
+      </div>
+      <div class="ne-reset-insight">
+        <img src="assets/storyboard/source/figures/assets/teaser/states/banana_human.png" width="1350" height="1000" alt="Human hand keypoints around the banana, the source of the retargeted reset"/>
+        <p><strong>Demonstrations change where learning starts, not what motion the robot must imitate.</strong> Training still includes ordinary resets, so the policy must also learn to approach and grasp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="approach" class="native-explainer" aria-labelledby="approach-title">
+  <div class="wide">
+    <div class="section-intro">
+      <p class="eyebrow">The method</p>
+      <h2 id="approach-title">Generate resets. Then learn with them.</h2>
+      <p>Human hand–object poses propose starting states. Physical filtering keeps usable ones. Reinforcement learning discovers the behavior.</p>
+    </div>
+    <div data-explainer>
+      <div class="ne-pipeline" role="tablist" aria-label="Explore the method" data-explainer-tabs>
+        <button id="ne-retarget-tab" type="button" role="tab" aria-selected="true" aria-controls="ne-retarget-panel"><span class="ne-step-number">01</span><span><strong>Retarget</strong><small>Human pose → robot state</small></span></button>
+        <button id="ne-filter-tab" type="button" role="tab" aria-selected="false" aria-controls="ne-filter-panel" tabindex="-1"><span class="ne-step-number">02</span><span><strong>Filter</strong><small>Check physical stability</small></span></button>
+        <button id="ne-bank-tab" type="button" role="tab" aria-selected="false" aria-controls="ne-bank-panel" tabindex="-1"><span class="ne-step-number">03</span><span><strong>Reset bank</strong><small>Mix training starts</small></span></button>
+        <button id="ne-learn-tab" type="button" role="tab" aria-selected="false" aria-controls="ne-learn-panel" tabindex="-1"><span class="ne-step-number">04</span><span><strong>Object-centric learning</strong><small>Learn the task with RL</small></span></button>
+      </div>
+      <div id="ne-retarget-panel" class="ne-panel" role="tabpanel" aria-labelledby="ne-retarget-tab" tabindex="0" data-explainer-panel>
+        <div class="ne-explanation-grid">
+          <div class="ne-copy">
+            <p class="ne-kicker">01 / Retarget</p>
+            <h3>Transfer a state, not a motion to imitate.</h3>
+            <p>Map human fingertip and wrist targets onto the robot hand, then solve collision-aware inverse kinematics for the arm.</p>
+            <p>Each candidate pairs a robot joint configuration with the object’s pose and goal. A plausible kinematic match is only a proposal: it may still be unstable in simulation.</p>
+            <p class="ne-note">Human data supplies reset states. Policy training uses no imitation or time-indexed tracking loss.</p>
+          </div>
+          <figure class="ne-retarget-diagram">
+            <div class="ne-pose-pair">
+              <div>
+                <img class="ne-cutout" src="assets/storyboard/source/figures/assets/pipeline/pair/human.png" width="1200" height="1000" alt="Human hand pose holding a power drill"/>
+                <p class="ne-label">Human hand + object</p>
+              </div>
+              <span class="ne-flow-arrow" aria-hidden="true">→</span>
+              <div>
+                <img class="ne-cutout" src="assets/storyboard/source/figures/assets/pipeline/pair/robot.png" width="1200" height="1000" alt="Retargeted robot hand configuration around the same power drill"/>
+                <p class="ne-label">Robot hand + object</p>
+              </div>
+            </div>
+            <figcaption><span class="ne-caption-label">Kinematic retargeting.</span> The hand changes embodiment; the object gives the interaction a common reference.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div id="ne-filter-panel" class="ne-panel" role="tabpanel" aria-labelledby="ne-filter-tab" tabindex="0" data-explainer-panel hidden>
+        <div class="ne-panel-intro">
+          <p class="ne-kicker">02 / Filter</p>
+          <h3>Reject states that fail the physical check.</h3>
+          <p>Hold the candidate joint targets in simulation with gravity disabled. Discard invalid configurations and states that terminate, yield non-finite measurements, or exceed the filter’s velocity thresholds.</p>
+        </div>
+        <div class="ne-evidence-pair">
+          <figure class="ne-evidence">
+            <h4>Retain <span class="ne-speed">0.25× speed</span></h4>
+            <video controls loop playsinline preload="none" width="1320" height="680" src="assets/video/clips/filter-retain.mp4" poster="assets/storyboard/source/media/filter/retain.jpg" aria-label="Retained power-drill reset: canonical zero-gravity hold test, shown at quarter speed"></video>
+            <figcaption>The recorded state passes the hold test and can enter the reset bank.</figcaption>
+          </figure>
+          <figure class="ne-evidence">
+            <h4>Discard <span class="ne-speed">0.25× speed</span></h4>
+            <video controls loop playsinline preload="none" width="1320" height="680" src="assets/video/clips/filter-discard.mp4" poster="assets/storyboard/source/media/filter/discard.jpg" aria-label="Discarded power-drill reset: canonical zero-gravity hold test, shown at quarter speed"></video>
+            <figcaption>The recorded state fails the hold test and is excluded from the reset bank.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div id="ne-bank-panel" class="ne-panel" role="tabpanel" aria-labelledby="ne-bank-tab" tabindex="0" data-explainer-panel hidden>
+        <div class="ne-panel-intro">
+          <p class="ne-kicker">03 / Reset bank</p>
+          <h3>Keep ordinary starts in the training mixture.</h3>
+          <p>Each training environment has an assigned object and demonstration. At reset, choose either an ordinary start or a uniformly sampled retained frame from that demonstration, paired with its terminal object goal.</p>
+        </div>
+        <div class="ne-reset-mixture">
+          <figure>
+            <div class="ne-reset-label"><h4>Ordinary reset</h4><span>Probability 1 − <i>p</i></span></div>
+            <img src="assets/storyboard/source/figures/assets/pipeline/default/default.png" width="1600" height="1000" alt="Robot in its ordinary home configuration, with the object at the start"/>
+            <figcaption>Home robot configuration and object start, with training randomization.</figcaption>
+          </figure>
+          <div class="ne-mixture-join" aria-hidden="true"><span>or</span></div>
+          <figure>
+            <div class="ne-reset-label"><h4>Hand–object reset</h4><span>Probability <i>p</i></span></div>
+            <img src="assets/storyboard/source/figures/assets/pipeline/filter_retain_demo0/stable_step000.png" width="1600" height="1000" alt="Robot initialized in a retained hand-object state holding the power drill"/>
+            <figcaption>Robot and object state from a physically filtered demonstration frame.</figcaption>
+          </figure>
+        </div>
+        <div class="ne-mixture-output"><span aria-hidden="true">↓</span><p><strong>One reset distribution for RL training</strong><br>(1 − <i>p</i>) ρ<sub>ordinary</sub> + <i>p</i> ρ<sub>hand–object</sub></p></div>
+      </div>
+      <div id="ne-learn-panel" class="ne-panel" role="tabpanel" aria-labelledby="ne-learn-tab" tabindex="0" data-explainer-panel hidden>
+        <div class="ne-panel-intro">
+          <p class="ne-kicker">04 / Object-centric learning</p>
+          <h3>Observe the object. Learn how to move it.</h3>
+          <p>PPO trains an LSTM policy from interaction. The actor receives current and goal object keypoints plus robot proprioception; its recurrent state carries interaction history.</p>
+        </div>
+        <div class="ne-learning-grid">
+          <figure class="ne-observations">
+            <svg viewBox="420 180 840 620" role="img" aria-label="Simulation policy observations: 1 marks current object keypoints, 2 the goal object keypoints, and 3 robot proprioception">
+              <image href="assets/storyboard/source/figures/assets/pipeline/scene/scene.png" width="1600" height="1000"/>
+              <g class="ne-observation-marker"><circle cx="719" cy="659" r="25"/><text x="719" y="659">1</text></g>
+              <g class="ne-observation-marker"><circle cx="576" cy="327" r="25"/><text x="576" y="327">2</text></g>
+              <g class="ne-observation-marker"><circle cx="946" cy="380" r="25"/><text x="946" y="380">3</text></g>
+            </svg>
+            <figcaption>Simulation state. The translucent object marks the goal pose, not a second physical object.</figcaption>
+          </figure>
+          <div class="ne-learning-loop">
+            <div class="ne-observation-list">
+              <h4>Policy observations</h4>
+              <ol><li>Current object keypoints</li><li>Goal object keypoints</li><li>Robot proprioception</li></ol>
+            </div>
+            <div class="ne-policy-node"><span aria-hidden="true">↓</span><p><strong>LSTM policy</strong><span>Trained with PPO</span></p></div>
+            <div class="ne-loop-return"><p><strong>Actions → simulation</strong><br>New observations return to the policy.</p></div>
+          </div>
+        </div>
+        <p class="ne-learning-reward"><strong>Reward the task, not imitation.</strong> Encourage proximity and progress toward the object’s goal pose, with a success bonus, action smoothness, and safety penalties. No imitation or tracking loss is needed.</p>
+        <p class="ne-note">The critic also receives privileged training information. Policies are trained separately per embodiment, with domain randomization and object/robot perturbations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+    <section id="rollouts" aria-labelledby="rollouts-title">
+      <div class="wide">
+        <div class="section-intro">
+          <p class="eyebrow">Rollouts</p>
+          <h2 id="rollouts-title">Across robots, objects, and settings.</h2>
+          <p>Explore the recorded policies in simulation and on the real robot. Choose an object to see its available training conditions, or browse all objects together.</p>
+        </div>
+        <div data-rollout-gallery>
+          <fieldset class="gallery-filters" disabled>
+            <legend class="visually-hidden">Filter recorded rollouts</legend>
+            <div class="gallery-filter">
+              <label for="gallery-domain">Domain</label>
+              <select id="gallery-domain" name="domain" aria-controls="gallery-results"><option value="simulation">Simulation</option></select>
+            </div>
+            <div class="gallery-filter">
+              <label for="gallery-robot">Robot embodiment</label>
+              <select id="gallery-robot" name="robot" aria-controls="gallery-results"><option value="ur7e_sharpa">UR7e + Sharpa</option></select>
+            </div>
+            <div class="gallery-filter">
+              <label for="gallery-object">Object</label>
+              <select id="gallery-object" name="object" aria-controls="gallery-results"><option value="all">All objects</option></select>
+            </div>
+            <div class="gallery-filter">
+              <label for="gallery-condition">Training / deployment</label>
+              <select id="gallery-condition" name="condition" aria-controls="gallery-results"><option value="xreset">Object-only reward + X-Reset</option></select>
+            </div>
+          </fieldset>
+          <div class="gallery-summary">
+            <p data-gallery-count role="status" aria-live="polite" aria-atomic="true">Recorded rollouts</p>
+            <p class="gallery-playback-note">Native-speed playback · Selected qualitative examples</p>
+          </div>
+          <p class="gallery-status" data-gallery-status role="alert" hidden></p>
+          <div id="gallery-results" class="gallery-results" data-gallery-results aria-busy="true"></div>
+          <noscript><p class="caption-note">Enable JavaScript to browse the rollout catalog. The real-world perturbation recordings remain available below.</p></noscript>
+        </div>
+        <details class="experiment-details">
+          <summary>Original paper results</summary>
+          <figure class="figure"><div class="figure-stage"><a href="assets/figures/output_fig1.png"><img src="assets/figures/output_fig1.png" width="2100" height="1215" loading="lazy" alt="Original reward-function boost plot across three robot embodiments."></a></div><figcaption>Reorientation success over 20 DexYCB objects. Error bars show standard error over three training seeds; recordings above are individual examples.</figcaption></figure>
+          <figure class="figure"><div class="figure-stage"><a href="assets/figures/output_fig2.png"><img src="assets/figures/output_fig2.png" width="2100" height="780" loading="lazy" alt="Original zero-shot scaling and matched-budget fine-tuning results."></a></div><figcaption>Evaluation on 12 unseen EBench objects, with 400 trials per object and three training seeds.</figcaption></figure>
+        </details>
+      </div>
+    </section>
+    <section id="recovery" aria-labelledby="recovery-title">
+      <div class="wide">
+        <div class="section-intro"><p class="eyebrow">Perturbation recovery</p><h2 id="recovery-title">When the object is disturbed.</h2><p>The real robot responds to external perturbations.</p></div>
+        <label class="recovery-options"><input id="show-goals" type="checkbox" checked>Show illustrative goal poses</label>
+        <div class="recovery-grid">
+          <figure><div class="recovery-media"><video src="assets/video/clips/mustard-robustness.mp4" poster="assets/storyboard/source/media/real/mustard-robustness.jpg" controls loop playsinline preload="none" width="960" height="960" aria-label="Mustard real-world perturbation recovery"></video><img class="goal-guide" src="assets/data/goal-mustard.svg" width="960" height="960" alt="Illustrative intended mustard goal outline, not a calibrated projection"></div><figcaption><strong>Mustard</strong><span>UR7e + Sharpa · native speed</span></figcaption></figure>
+          <figure><div class="recovery-media"><video src="assets/video/clips/hammer-robustness.mp4" poster="assets/storyboard/source/media/real/hammer-robustness.jpg" controls loop playsinline preload="none" width="960" height="960" aria-label="Hammer real-world perturbation recovery"></video><img class="goal-guide" src="assets/data/goal-hammer.svg" width="960" height="960" alt="Illustrative intended hammer goal outline, not a calibrated projection"></div><figcaption><strong>Hammer</strong><span>UR7e + Sharpa · native speed</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wide foot-grid"><p>X-Reset · Applied Intuition</p><div class="footer-links"><a href="assets/video/xreset-narrated.mp4">Full narrated video</a><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div></div></footer>
+
+  <pre id="bibtex-src" hidden>@article{dan2026xreset,
+  title={X-Reset: Scaling Object-Centric Reinforcement Learning via Cross-Embodiment Resets},
+  author={Dan, Prithwish and Ma, Chenyang and Zhan, Wei},
+  journal={arXiv preprint arXiv:2609.35715},
+  year={2026}
+}</pre>
+</body>
+</html>

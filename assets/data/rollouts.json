@@ -1,0 +1,366 @@
+{
+  "defaults": {
+    "domain": "simulation",
+    "robot": "ur7e_sharpa",
+    "object": "all",
+    "condition": "xreset"
+  },
+  "domains": {
+    "simulation": "Simulation",
+    "real": "Real world"
+  },
+  "robots": {
+    "ur7e_sharpa": "UR7e + Sharpa",
+    "ur7e_robotiq": "UR7e + Robotiq",
+    "kuka_sharpa": "KUKA + Sharpa"
+  },
+  "conditions": {
+    "xreset": "Object-only reward + X-Reset",
+    "obj1": "Zero-shot · 1 training object",
+    "obj20": "Zero-shot · 20 training objects",
+    "ebenchscratch": "From scratch",
+    "ebenchfinetune": "Fine-tuned",
+    "sim-to-real": "Zero-shot sim-to-real"
+  },
+  "groups": [
+    {
+      "id": "embodiments",
+      "title": "Object reorientation",
+      "description": "Selected successes from separately trained policies, not matched trials across embodiments. The transparent goal object is a simulation overlay. Clips are physically trimmed through the recorded first-success frame and loop.",
+      "comparison": false
+    },
+    {
+      "id": "scaling",
+      "title": "Scaling to unseen objects",
+      "description": "The same unseen objects under one-object and twenty-object training. These are selected failure/success contrasts, not aggregate results. The twenty-object fork excerpt begins at source time 4 s; its goal overlay uses a different pose proxy from the evaluation metric. The fork in-point is physically trimmed; clips retain their natural recorded ends and loop.",
+      "comparison": true
+    },
+    {
+      "id": "finetune",
+      "title": "Adapting a pretrained policy",
+      "description": "Matched 10k-epoch budget: 5k pretraining + 5k fine-tuning versus 10k from scratch. Both adaptation stages use default resets (p = 0), with no new human demonstrations. Selected failure/success contrasts, not aggregate results. Clips retain their natural recorded ends and loop.",
+      "comparison": true
+    },
+    {
+      "id": "real",
+      "title": "Zero-shot deployment",
+      "comparison": false
+    }
+  ],
+  "provenance": [
+    "paper-figures/projects/xreset/video/storyboard-prototype.js",
+    "paper-figures/projects/xreset/video/prototype-assets/embodiment-clips.json",
+    "paper-figures/projects/xreset/video/prototype-assets/transfer-clips.json",
+    "paper-figures/projects/xreset/video/media/real/playback-selection.json",
+    "paper-figures/projects/xreset/video/media/real/additional-manifest.json",
+    "paper-figures/projects/xreset/paper/experiments.tex:60"
+  ],
+  "clips": [
+    {
+      "id": "ur7e_sharpa-banana",
+      "domain": "simulation",
+      "robot": "ur7e_sharpa",
+      "object": "banana",
+      "objectLabel": "Banana",
+      "condition": "xreset",
+      "group": "embodiments",
+      "video": "ur7e_sharpa-banana.mp4",
+      "poster": "prototype-posters/embodiments-ur7e_sharpa-banana-demo12-start.jpg"
+    },
+    {
+      "id": "ur7e_sharpa-powerdrill",
+      "domain": "simulation",
+      "robot": "ur7e_sharpa",
+      "object": "powerdrill",
+      "objectLabel": "Power drill",
+      "condition": "xreset",
+      "group": "embodiments",
+      "video": "ur7e_sharpa-powerdrill.mp4",
+      "poster": "prototype-posters/embodiments-ur7e_sharpa-powerdrill-demo13-start.jpg"
+    },
+    {
+      "id": "ur7e_sharpa-extra_large_clamp",
+      "domain": "simulation",
+      "robot": "ur7e_sharpa",
+      "object": "extra_large_clamp",
+      "objectLabel": "Extra-large clamp",
+      "condition": "xreset",
+      "group": "embodiments",
+      "video": "ur7e_sharpa-extra_large_clamp.mp4",
+      "poster": "prototype-posters/embodiments-ur7e_sharpa-extra_large_clamp-demo07-start.jpg"
+    },
+    {
+      "id": "ur7e_robotiq-mug",
+      "domain": "simulation",
+      "robot": "ur7e_robotiq",
+      "object": "mug",
+      "objectLabel": "Mug",
+      "condition": "xreset",
+      "group": "embodiments",
+      "video": "ur7e_robotiq-mug.mp4",
+      "poster": "prototype-posters/embodiments-ur7e_robotiq-mug-demo02-start.jpg"
+    },
+    {
+      "id": "ur7e_robotiq-mustard",
+      "domain": "simulation",
+      "robot": "ur7e_robotiq",
+      "object": "mustard",
+      "objectLabel": "Mustard bottle",
+      "condition": "xreset",
+      "group": "embodiments",
+      "video": "ur7e_robotiq-mustard.mp4",
+      "poster": "prototype-posters/embodiments-ur7e_robotiq-mustard-demo02-start.jpg"
+    },
+    {
+      "id": "ur7e_robotiq-cracker_box",
+      "domain": "simulation",
+      "robot": "ur7e_robotiq",
+      "object": "cracker_box",
+      "objectLabel": "Cracker box",
+      "condition": "xreset",
+      "group": "embodiments",
+      "video": "ur7e_robotiq-cracker_box.mp4",
+      "poster": "prototype-posters/embodiments-ur7e_robotiq-cracker_box-demo13-start.jpg"
+    },
+    {
+      "id": "kuka_sharpa-bleach",
+      "domain": "simulation",
+      "robot": "kuka_sharpa",
+      "object": "bleach",
+      "objectLabel": "Bleach bottle",
+      "condition": "xreset",
+      "group": "embodiments",
+      "video": "kuka_sharpa-bleach.mp4",
+      "poster": "prototype-posters/embodiments-kuka_sharpa-bleach-demo02-start.jpg"
+    },
+    {
+      "id": "kuka_sharpa-bowl",
+      "domain": "simulation",
+      "robot": "kuka_sharpa",
+      "object": "bowl",
+      "objectLabel": "Bowl (DexYCB)",
+      "condition": "xreset",
+      "group": "embodiments",
+      "video": "kuka_sharpa-bowl.mp4",
+      "poster": "prototype-posters/embodiments-kuka_sharpa-bowl-demo14-start.jpg"
+    },
+    {
+      "id": "kuka_sharpa-wood_block",
+      "domain": "simulation",
+      "robot": "kuka_sharpa",
+      "object": "wood_block",
+      "objectLabel": "Wood block",
+      "condition": "xreset",
+      "group": "embodiments",
+      "video": "kuka_sharpa-wood_block.mp4",
+      "poster": "prototype-posters/embodiments-kuka_sharpa-wood_block-demo15-start.jpg"
+    },
+    {
+      "id": "ur7e_sharpa-mustard",
+      "domain": "simulation",
+      "robot": "ur7e_sharpa",
+      "object": "mustard",
+      "objectLabel": "Mustard bottle",
+      "condition": "xreset",
+      "group": "embodiments",
+      "video": "ur7e_sharpa-mustard.mp4",
+      "poster": "prototype-posters/ur7e_sharpa-mustard.jpg"
+    },
+    {
+      "id": "ur7e_sharpa-cracker_box",
+      "domain": "simulation",
+      "robot": "ur7e_sharpa",
+      "object": "cracker_box",
+      "objectLabel": "Cracker box",
+      "condition": "xreset",
+      "group": "embodiments",
+      "video": "ur7e_sharpa-cracker_box.mp4",
+      "poster": "prototype-posters/ur7e_sharpa-cracker_box.jpg"
+    },
+    {
+      "id": "ur7e_sharpa-bowl",
+      "domain": "simulation",
+      "robot": "ur7e_sharpa",
+      "object": "bowl",
+      "objectLabel": "Bowl (DexYCB)",
+      "condition": "xreset",
+      "group": "embodiments",
+      "video": "ur7e_sharpa-bowl.mp4",
+      "poster": "prototype-posters/ur7e_sharpa-bowl.jpg"
+    },
+    {
+      "id": "fork_ae48-obj1",
+      "domain": "simulation",
+      "robot": "ur7e_sharpa",
+      "object": "fork_ae48",
+      "objectLabel": "Fork",
+      "condition": "obj1",
+      "group": "scaling",
+      "video": "fork_ae48-obj1.mp4",
+      "poster": "prototype-posters/transfer-fork_ae48-obj1-demo12-start.jpg",
+      "outcome": "Selected failure"
+    },
+    {
+      "id": "fork_ae48-obj20",
+      "domain": "simulation",
+      "robot": "ur7e_sharpa",
+      "object": "fork_ae48",
+      "objectLabel": "Fork",
+      "condition": "obj20",
+      "group": "scaling",
+      "video": "fork_ae48-obj20.mp4",
+      "poster": "prototype-posters/transfer-fork_ae48-obj20-demo12-start-4s.jpg",
+      "outcome": "Selected success"
+    },
+    {
+      "id": "detergent_1-obj1",
+      "domain": "simulation",
+      "robot": "ur7e_sharpa",
+      "object": "detergent_1",
+      "objectLabel": "Detergent bottle",
+      "condition": "obj1",
+      "group": "scaling",
+      "video": "detergent_1-obj1.mp4",
+      "poster": "prototype-posters/transfer-detergent_1-obj1-demo13-start.jpg",
+      "outcome": "Selected failure"
+    },
+    {
+      "id": "detergent_1-obj20",
+      "domain": "simulation",
+      "robot": "ur7e_sharpa",
+      "object": "detergent_1",
+      "objectLabel": "Detergent bottle",
+      "condition": "obj20",
+      "group": "scaling",
+      "video": "detergent_1-obj20.mp4",
+      "poster": "prototype-posters/transfer-detergent_1-obj20-demo13-start.jpg",
+      "outcome": "Selected success"
+    },
+    {
+      "id": "bowl_3964-ebenchscratch",
+      "domain": "simulation",
+      "robot": "ur7e_sharpa",
+      "object": "bowl_3964",
+      "objectLabel": "Bowl (EBench)",
+      "condition": "ebenchscratch",
+      "group": "finetune",
+      "video": "bowl_3964-ebenchscratch.mp4",
+      "poster": "prototype-posters/transfer-bowl_3964-ebenchscratch-demo00-start.jpg",
+      "outcome": "Selected failure"
+    },
+    {
+      "id": "bowl_3964-ebenchfinetune",
+      "domain": "simulation",
+      "robot": "ur7e_sharpa",
+      "object": "bowl_3964",
+      "objectLabel": "Bowl (EBench)",
+      "condition": "ebenchfinetune",
+      "group": "finetune",
+      "video": "bowl_3964-ebenchfinetune.mp4",
+      "poster": "prototype-posters/transfer-bowl_3964-ebenchfinetune-demo00-start.jpg",
+      "outcome": "Selected success"
+    },
+    {
+      "id": "remote_63f5-ebenchscratch",
+      "domain": "simulation",
+      "robot": "ur7e_sharpa",
+      "object": "remote_63f5",
+      "objectLabel": "Remote control",
+      "condition": "ebenchscratch",
+      "group": "finetune",
+      "video": "remote_63f5-ebenchscratch.mp4",
+      "poster": "prototype-posters/transfer-remote_63f5-ebenchscratch-demo17-start.jpg",
+      "outcome": "Selected failure"
+    },
+    {
+      "id": "remote_63f5-ebenchfinetune",
+      "domain": "simulation",
+      "robot": "ur7e_sharpa",
+      "object": "remote_63f5",
+      "objectLabel": "Remote control",
+      "condition": "ebenchfinetune",
+      "group": "finetune",
+      "video": "remote_63f5-ebenchfinetune.mp4",
+      "poster": "prototype-posters/transfer-remote_63f5-ebenchfinetune-demo17-start.jpg",
+      "outcome": "Selected success"
+    },
+    {
+      "id": "real-mustard",
+      "domain": "real",
+      "robot": "ur7e_sharpa",
+      "object": "mustard",
+      "objectLabel": "Mustard bottle",
+      "condition": "sim-to-real",
+      "group": "real",
+      "video": "real-mustard.mp4",
+      "poster": "media/real/mustard.jpg",
+      "recording": 1,
+      "familiarity": "Seen object"
+    },
+    {
+      "id": "real-pringles",
+      "domain": "real",
+      "robot": "ur7e_sharpa",
+      "object": "pringles",
+      "objectLabel": "Pringles can",
+      "condition": "sim-to-real",
+      "group": "real",
+      "video": "real-pringles.mp4",
+      "poster": "media/real/pringles.jpg",
+      "recording": 1,
+      "familiarity": "Unseen object"
+    },
+    {
+      "id": "real-hammer",
+      "domain": "real",
+      "robot": "ur7e_sharpa",
+      "object": "hammer",
+      "objectLabel": "Hammer",
+      "condition": "sim-to-real",
+      "group": "real",
+      "video": "real-hammer.mp4",
+      "poster": "media/real/hammer.jpg",
+      "recording": 1,
+      "familiarity": "Unseen object"
+    },
+    {
+      "id": "real-mustard2",
+      "domain": "real",
+      "robot": "ur7e_sharpa",
+      "object": "mustard",
+      "objectLabel": "Mustard bottle",
+      "condition": "sim-to-real",
+      "group": "real",
+      "video": "real-mustard2.mp4",
+      "poster": "media/real/mustard2.jpg",
+      "recording": 2,
+      "familiarity": "Seen object"
+    },
+    {
+      "id": "real-pringles2",
+      "domain": "real",
+      "robot": "ur7e_sharpa",
+      "object": "pringles",
+      "objectLabel": "Pringles can",
+      "condition": "sim-to-real",
+      "group": "real",
+      "video": "real-pringles2.mp4",
+      "poster": "media/real/pringles2.jpg",
+      "recording": 2,
+      "familiarity": "Unseen object"
+    },
+    {
+      "id": "real-hammer2",
+      "domain": "real",
+      "robot": "ur7e_sharpa",
+      "object": "hammer",
+      "objectLabel": "Hammer",
+      "condition": "sim-to-real",
+      "group": "real",
+      "video": "real-hammer2.mp4",
+      "poster": "media/real/hammer2.jpg",
+      "recording": 2,
+      "familiarity": "Unseen object"
+    }
+  ]
+}

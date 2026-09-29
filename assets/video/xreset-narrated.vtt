@@ -1,0 +1,162 @@
+WEBVTT
+
+00:02.898 --> 00:05.919
+We study low-level dexterous manipulation:
+
+00:06.094 --> 00:10.136
+approaching, grasping, and reorienting
+diverse objects to specified goal poses
+
+00:10.148 --> 00:11.093
+with a generalist policy.
+
+00:13.887 --> 00:17.506
+A common approach trains object-centric
+reinforcement learning policies in
+
+00:17.518 --> 00:20.919
+simulation, rewarding progress toward the
+object's goal pose.
+
+00:21.548 --> 00:23.276
+But learning from scratch is difficult:
+
+00:23.733 --> 00:25.808
+limited exploration can prevent the policy
+
+00:25.820 --> 00:28.297
+from discovering stable grasps for
+reorientation.
+
+00:28.987 --> 00:33.399
+X-Reset makes exploration easier by
+resetting the robot to hand-object states
+
+00:33.477 --> 00:34.584
+demonstrated by a human.
+
+00:36.942 --> 00:39.321
+First, we generate cross-embodiment
+resets.
+
+00:40.598 --> 00:44.021
+We kinematically retarget human
+hand-object poses to the robot.
+
+00:45.087 --> 00:48.684
+Because human and robot hands differ,
+these states can contain errors,
+
+00:48.881 --> 00:50.576
+such as fingers penetrating the object.
+
+00:52.598 --> 00:54.858
+We filter out unstable states in
+simulation,
+
+00:55.120 --> 00:57.173
+retaining stable ones for the reset bank.
+
+00:58.887 --> 01:02.039
+Next, we train an LSTM policy with PPO.
+
+01:02.687 --> 01:04.654
+Its inputs are current and goal object
+keypoints,
+
+01:04.666 --> 01:07.154
+together with robot proprioception.
+
+01:07.787 --> 01:11.732
+During training, we mix ordinary
+environment resets with occasional resets
+to
+
+01:11.744 --> 01:13.547
+retargeted hand-object states.
+
+01:15.387 --> 01:19.821
+Using the same training recipe, X-Reset
+substantially improves generalist policy
+
+01:19.833 --> 01:21.865
+learning across all three embodiments.
+
+01:27.387 --> 01:31.626
+We train on DexYCB and evaluate zero-shot
+on held-out EBench objects.
+
+01:33.587 --> 01:37.010
+As the human demonstrations cover more
+hand-object diversity,
+
+01:37.022 --> 01:39.771
+X-Reset generalizes better to unseen
+objects.
+
+01:42.387 --> 01:45.963
+X-Reset also provides a pretrained
+backbone that can be fine-tuned on new
+
+01:45.974 --> 01:48.952
+objects, without any new human
+demonstrations.
+
+01:51.587 --> 01:54.271
+At the same total training budget,
+including pretraining,
+
+01:54.511 --> 01:58.228
+fine-tuning substantially outperforms
+training from scratch on the new objects,
+
+01:58.468 --> 02:00.728
+with much lower variation across training
+seeds.
+
+02:05.398 --> 02:08.495
+Because X-Reset does not require strict
+imitation of human trajectories,
+
+02:08.507 --> 02:11.343
+even imperfect hand-object poses can
+
+02:11.518 --> 02:13.734
+provide useful starting points for
+exploration.
+
+02:14.587 --> 02:15.826
+Adding noise to the offline
+
+02:15.837 --> 02:18.576
+hand-pose estimates degrades performance
+only modestly.
+
+02:18.935 --> 02:20.021
+Even the highest tested noise
+
+02:20.033 --> 02:23.195
+level outperforms training without
+hand-object resets.
+
+02:25.398 --> 02:29.865
+The learned behaviors also transfer
+zero-shot from simulation to the real
+robot,
+
+02:29.877 --> 02:31.713
+on both seen and unseen objects.
+
+02:38.187 --> 02:42.154
+These real-world examples also show
+robustness to external perturbations.
+
+02:45.587 --> 02:47.793
+After human contact, the policies continue
+
+02:47.805 --> 02:50.717
+reorienting the objects toward their goal
+orientations.
+
+02:52.459 --> 02:53.154
+Thank you for listening!

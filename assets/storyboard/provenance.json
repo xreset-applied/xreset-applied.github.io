@@ -1,0 +1,2002 @@
+{
+  "generator": "tools/sync_media.py",
+  "generatorSha256": "b26fab274d0a9328c393e47551accb398b2f1fe9ee2cc30c7f6b9b45d368e210",
+  "canonical": "Selected media from the X-Reset canonical video workspace",
+  "policy": "Source images are byte-identical; requested clip posters are extracted from the first packaged frame. Native clips are physically trimmed at inclusive source-frame selections, H.264/yuv420p with faststart, no audio, original resolution and fps. Complete excerpts are remuxed without re-encoding. Filter tests retain their already-encoded 0.25x slowdown. No source MP4 duplicates are published. Goal outlines remain illustrative, not calibrated.",
+  "selectionManifest": {
+    "path": "assets/data/clip-selections.json",
+    "sha256": "b3ef7a54806a05769226357eb87e91c0fb77aeb0ba0fb89d59093fb1f98e2b16"
+  },
+  "inputs": [
+    {
+      "name": "storyboard-prototype.js",
+      "sha256": "54d0f5404c4b13a678cd8f910671d8b3549130f45bb794fea4275803d0b50bc0"
+    },
+    {
+      "name": "serve_storyboard.py",
+      "sha256": "2790df1be96543059d2bbd1d36f31e43da33761c73ba74c18421bb2965fd22aa"
+    },
+    {
+      "name": "prototype-assets/embodiment-clips.json",
+      "sha256": "0bd5fdb749fdfad4cb7082cb8c64c266ead825e7d5eea1d0ac496311ebc53abd"
+    },
+    {
+      "name": "prototype-assets/transfer-clips.json",
+      "sha256": "34e412d5efe39b47bf047cb80108870c01e3cb5ece20a7e6e9b900901d4c6a47"
+    },
+    {
+      "name": "media/filter/manifest.json",
+      "sha256": "6aaf3351acd6b507936621f2cfc1345ba18895c97bfeb1eff6e949822f980092"
+    },
+    {
+      "name": "media/real/goal-guides.json",
+      "sha256": "12f707d43d48ddf881aafcdba8bd075a5b536e6baaf898ade852f06dbd554145"
+    },
+    {
+      "name": "media/real/playback-selection.json",
+      "sha256": "f9df68b565e5e5207e0e9384b1a633a710ffa79ec3a497bfdb3853c5f63d6c99"
+    },
+    {
+      "name": "media/real/additional-manifest.json",
+      "sha256": "66e59c399177f4a35883f8ad8b372aae1107a023fd257b073a9ce31662a5ffbc"
+    }
+  ],
+  "derived": [
+    {
+      "path": "assets/video/clips/banana-reset.jpg",
+      "sha256": "6edc29429ee472e5e2f3d883ad8fd2f7763770f80b59d091abf5d8f6088453b2",
+      "sourceVideo": "assets/video/clips/banana-reset.mp4",
+      "sourceVideoSha256": "8c287f1d31b8fd32e82c03d05841c320edeeff900752314d2cb47ffa2594e5cd",
+      "frame": 0,
+      "recipe": {
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-frames:v",
+          "1",
+          "-q:v",
+          "2",
+          "-update",
+          "1"
+        ]
+      }
+    },
+    {
+      "path": "assets/data/goal-mustard.svg",
+      "sha256": "55b86eb3a6db1e122aca70e50c245d6b3c6a3fccc8e402e78071c5847f0b2829"
+    },
+    {
+      "path": "assets/data/goal-hammer.svg",
+      "sha256": "b27e6412f72dd8df92f05cc814e09f078acf47d6d9472dd7cd13bc397aa0a5ab"
+    }
+  ],
+  "assets": [
+    {
+      "path": "source/figures/assets/pipeline/default/default.png",
+      "canonicalRoute": "/figures/assets/pipeline/default/default.png",
+      "sha256": "b302c42c65ae2f22c5acab6e712dab7453127d9a4358b329e15c69e6c44ad52b",
+      "bytes": 746385
+    },
+    {
+      "path": "source/figures/assets/pipeline/filter_retain_demo0/stable_step000.png",
+      "canonicalRoute": "/figures/assets/pipeline/filter_retain_demo0/stable_step000.png",
+      "sha256": "5bb53a50f01c83b170ffb9009bab44f37e0b814d9f0e44dbaa6bedf28f39d67d",
+      "bytes": 687829
+    },
+    {
+      "path": "source/figures/assets/pipeline/pair/human.png",
+      "canonicalRoute": "/figures/assets/pipeline/pair/human.png",
+      "sha256": "2ecfff2dd12bd5a25304e3eb5cdc84fe9ef391126869fc908231cb905e873856",
+      "bytes": 411241
+    },
+    {
+      "path": "source/figures/assets/pipeline/pair/robot.png",
+      "canonicalRoute": "/figures/assets/pipeline/pair/robot.png",
+      "sha256": "c70f4a1591a820261c535b0dd835d096b51862ea1193603e207fc36154031156",
+      "bytes": 423181
+    },
+    {
+      "path": "source/figures/assets/pipeline/scene/scene.png",
+      "canonicalRoute": "/figures/assets/pipeline/scene/scene.png",
+      "sha256": "617ab44869d65172bc22af76ca25e8a30e26420e3f289ee349fbb6002d982d3b",
+      "bytes": 789108
+    },
+    {
+      "path": "source/figures/assets/teaser/states/banana_human.png",
+      "canonicalRoute": "/figures/assets/teaser/states/banana_human.png",
+      "sha256": "72884657be4935fad2724f921573ecc097a15ddce989f5cbbf0564f38c4ef5d5",
+      "bytes": 237483
+    },
+    {
+      "path": "source/figures/assets/teaser/states/object_start.png",
+      "canonicalRoute": "/figures/assets/teaser/states/object_start.png",
+      "sha256": "88bb745e6d7039d6761abc6b0527a807345f6a11d20543da6eb0eacb164e42c5",
+      "bytes": 223189
+    },
+    {
+      "path": "source/media/filter/discard.jpg",
+      "canonicalRoute": "/media/filter/discard.jpg",
+      "sha256": "276e1ba9a195787b706a2b71e31d5a51b3779f9acc757e3ca33d87164c65ab34",
+      "bytes": 63023
+    },
+    {
+      "path": "source/media/filter/retain.jpg",
+      "canonicalRoute": "/media/filter/retain.jpg",
+      "sha256": "2fcc6a6e28e424cdb419fbf56eb715dd2447ad28f374a93c581755027ed01393",
+      "bytes": 64286
+    },
+    {
+      "path": "source/media/real/hammer-robustness.jpg",
+      "canonicalRoute": "/media/real/hammer-robustness.jpg",
+      "sha256": "1978e4c7301a1fda2ddaa72b1a1c1ba1c733243adb097eb49ecee42ef57999ca",
+      "bytes": 116914
+    },
+    {
+      "path": "source/media/real/hammer.jpg",
+      "canonicalRoute": "/media/real/hammer.jpg",
+      "sha256": "582303833060e6a297dd385eb412d2f025c87351dc12d2cb5a62e0fefa71bf87",
+      "bytes": 172603
+    },
+    {
+      "path": "source/media/real/hammer2.jpg",
+      "canonicalRoute": "/media/real/hammer2.jpg",
+      "sha256": "eb3043aeb63dbef8826ceba9a3fb386d1f7f556042adcb1cbba380aa9b6fb62b",
+      "bytes": 167635
+    },
+    {
+      "path": "source/media/real/mustard-robustness.jpg",
+      "canonicalRoute": "/media/real/mustard-robustness.jpg",
+      "sha256": "7da1bdc5f1ff764117fb20beeed44437fb76be7f717a4d82fb6258293dd38853",
+      "bytes": 110203
+    },
+    {
+      "path": "source/media/real/mustard.jpg",
+      "canonicalRoute": "/media/real/mustard.jpg",
+      "sha256": "95e9491e5012cedd2005d5cdb6623203463e756076dfc52a7de93923197febef",
+      "bytes": 127790
+    },
+    {
+      "path": "source/media/real/mustard2.jpg",
+      "canonicalRoute": "/media/real/mustard2.jpg",
+      "sha256": "7a951a03592295020d854d4de177470be39f72302b4ca261e5f619f113c85006",
+      "bytes": 131678
+    },
+    {
+      "path": "source/media/real/pringles.jpg",
+      "canonicalRoute": "/media/real/pringles.jpg",
+      "sha256": "ad34483bcbe96aae3dc10a9c4f4b60e1cf04458b912d0524490cc07a37acd2c2",
+      "bytes": 114719
+    },
+    {
+      "path": "source/media/real/pringles2.jpg",
+      "canonicalRoute": "/media/real/pringles2.jpg",
+      "sha256": "2d9c67ee4163ec3dc2d978e667864fb86099d56250105f5012436fa123e4e96d",
+      "bytes": 150696
+    },
+    {
+      "path": "source/prototype-posters/embodiments-kuka_sharpa-bleach-demo02-start.jpg",
+      "canonicalRoute": "/prototype-posters/embodiments-kuka_sharpa-bleach-demo02-start.jpg",
+      "sha256": "d986c684f1d65e7c4cd265da6c5ba189b3704b7a6f7a308e3062c15c4befd831",
+      "bytes": 70013
+    },
+    {
+      "path": "source/prototype-posters/embodiments-kuka_sharpa-bowl-demo14-start.jpg",
+      "canonicalRoute": "/prototype-posters/embodiments-kuka_sharpa-bowl-demo14-start.jpg",
+      "sha256": "6d147cf08f3bdf74308d3a2c7b899b7bad88654ca3a716fc19bd08c3ca90d9cc",
+      "bytes": 68900
+    },
+    {
+      "path": "source/prototype-posters/embodiments-kuka_sharpa-wood_block-demo15-start.jpg",
+      "canonicalRoute": "/prototype-posters/embodiments-kuka_sharpa-wood_block-demo15-start.jpg",
+      "sha256": "c36e9c18b43fd712c84270dd69b4dd84df5d59818d9724e58f53950808aaca95",
+      "bytes": 71394
+    },
+    {
+      "path": "source/prototype-posters/embodiments-ur7e_robotiq-cracker_box-demo13-start.jpg",
+      "canonicalRoute": "/prototype-posters/embodiments-ur7e_robotiq-cracker_box-demo13-start.jpg",
+      "sha256": "648f83918f64ea3251553ec88688d710a1c2e26b9389b3901b2774bc1b088b20",
+      "bytes": 79287
+    },
+    {
+      "path": "source/prototype-posters/embodiments-ur7e_robotiq-mug-demo02-start.jpg",
+      "canonicalRoute": "/prototype-posters/embodiments-ur7e_robotiq-mug-demo02-start.jpg",
+      "sha256": "59a93e279e8f25bf9a22a84f462969a95755ea8ce0123684a799f6b21673da05",
+      "bytes": 72979
+    },
+    {
+      "path": "source/prototype-posters/embodiments-ur7e_robotiq-mustard-demo02-start.jpg",
+      "canonicalRoute": "/prototype-posters/embodiments-ur7e_robotiq-mustard-demo02-start.jpg",
+      "sha256": "9188081dfe35965479e3573825a6eae0f6ade48ab6dcbb641c2b9a5ef3614b6a",
+      "bytes": 73288
+    },
+    {
+      "path": "source/prototype-posters/embodiments-ur7e_sharpa-banana-demo12-start.jpg",
+      "canonicalRoute": "/prototype-posters/embodiments-ur7e_sharpa-banana-demo12-start.jpg",
+      "sha256": "3bba6bc2f26631c5648af990ec67eff538995456bc15b5e0724eeb4748fca0f0",
+      "bytes": 71235
+    },
+    {
+      "path": "source/prototype-posters/embodiments-ur7e_sharpa-extra_large_clamp-demo07-start.jpg",
+      "canonicalRoute": "/prototype-posters/embodiments-ur7e_sharpa-extra_large_clamp-demo07-start.jpg",
+      "sha256": "6e6f149c8ec4586059e83a82886e2373776d21a0b54121960a7cdca232ea00fe",
+      "bytes": 75023
+    },
+    {
+      "path": "source/prototype-posters/embodiments-ur7e_sharpa-powerdrill-demo13-start.jpg",
+      "canonicalRoute": "/prototype-posters/embodiments-ur7e_sharpa-powerdrill-demo13-start.jpg",
+      "sha256": "20c7f06a2b688929c54cd0409c78e6c3db910892d1bf8fbbb529b24ec3d73cdb",
+      "bytes": 77044
+    },
+    {
+      "path": "source/prototype-posters/transfer-bowl_3964-ebenchfinetune-demo00-start.jpg",
+      "canonicalRoute": "/prototype-posters/transfer-bowl_3964-ebenchfinetune-demo00-start.jpg",
+      "sha256": "d27131630321e388c1c66bee15457594823e50ea4a7260b767fa7a5173312e10",
+      "bytes": 76882
+    },
+    {
+      "path": "source/prototype-posters/transfer-bowl_3964-ebenchscratch-demo00-start.jpg",
+      "canonicalRoute": "/prototype-posters/transfer-bowl_3964-ebenchscratch-demo00-start.jpg",
+      "sha256": "df15fe37fb4b919833cd95b3e3c14be4edbcb75930a44e80cefc08b30850b2ed",
+      "bytes": 77659
+    },
+    {
+      "path": "source/prototype-posters/transfer-detergent_1-obj1-demo13-start.jpg",
+      "canonicalRoute": "/prototype-posters/transfer-detergent_1-obj1-demo13-start.jpg",
+      "sha256": "fc6fe1f6f65d7bc6f288640018184ed201abd760d977572c32d2cd8b5e64ac77",
+      "bytes": 71422
+    },
+    {
+      "path": "source/prototype-posters/transfer-detergent_1-obj20-demo13-start.jpg",
+      "canonicalRoute": "/prototype-posters/transfer-detergent_1-obj20-demo13-start.jpg",
+      "sha256": "c45e2b8a63ee38bddc61e69ed2e76671791ae812bf9c5c08245d11f4b5cff292",
+      "bytes": 71422
+    },
+    {
+      "path": "source/prototype-posters/transfer-fork_ae48-obj1-demo12-start.jpg",
+      "canonicalRoute": "/prototype-posters/transfer-fork_ae48-obj1-demo12-start.jpg",
+      "sha256": "6e034024443620ac80945b1614b6cc988a598192a95c51254fcf8c17936ef66d",
+      "bytes": 70104
+    },
+    {
+      "path": "source/prototype-posters/transfer-fork_ae48-obj20-demo12-start-4s.jpg",
+      "canonicalRoute": "/prototype-posters/transfer-fork_ae48-obj20-demo12-start-4s.jpg",
+      "sha256": "f131b5b4633dbf6aac5e5ab7efc899ca8523c4d502560f4b1d41328466a289de",
+      "bytes": 70847
+    },
+    {
+      "path": "source/prototype-posters/transfer-remote_63f5-ebenchfinetune-demo17-start.jpg",
+      "canonicalRoute": "/prototype-posters/transfer-remote_63f5-ebenchfinetune-demo17-start.jpg",
+      "sha256": "cef68753ad15031a75ebbd595defb2510db6755dd2f1a8f6b46cd490960e6166",
+      "bytes": 69283
+    },
+    {
+      "path": "source/prototype-posters/transfer-remote_63f5-ebenchscratch-demo17-start.jpg",
+      "canonicalRoute": "/prototype-posters/transfer-remote_63f5-ebenchscratch-demo17-start.jpg",
+      "sha256": "33cc751f77b63f3849bcad7226c61247995f9414dedd16f11f643ea286dc5b1c",
+      "bytes": 69744
+    },
+    {
+      "path": "source/prototype-posters/ur7e_sharpa-bowl.jpg",
+      "canonicalRoute": "/prototype-posters/ur7e_sharpa-bowl.jpg",
+      "sha256": "09de9f9bcd4f296226bec7beb04bb6933483a841468de4882b1948dac8bf81fe",
+      "bytes": 20994
+    },
+    {
+      "path": "source/prototype-posters/ur7e_sharpa-cracker_box.jpg",
+      "canonicalRoute": "/prototype-posters/ur7e_sharpa-cracker_box.jpg",
+      "sha256": "123b8c3bd35bd094856e7f923c543393ae0df33893e15e975817f1d7e1877e06",
+      "bytes": 22126
+    },
+    {
+      "path": "source/prototype-posters/ur7e_sharpa-mustard.jpg",
+      "canonicalRoute": "/prototype-posters/ur7e_sharpa-mustard.jpg",
+      "sha256": "407a5d514bc67bb1a21205efedd454eb3a799fda8d1a3b32b28116893dd064e1",
+      "bytes": 21313
+    },
+    {
+      "path": "source/prototype-posters/wood-block-start.jpg",
+      "canonicalRoute": "/prototype-posters/wood-block-start.jpg",
+      "sha256": "9d21add6dff3efdb3c28e50ce92c4b79f0951d048ff3c2f7d37a71badfc0919c",
+      "bytes": 73203
+    }
+  ],
+  "clips": [
+    {
+      "id": "banana-reset",
+      "path": "assets/video/clips/banana-reset.mp4",
+      "canonicalRoute": "/draft/reset_eval/replay/reset_banana_demo00_env0_ep0.mp4",
+      "sourceSha256": "4cd7797c8e0f152f9c45fa24038987e6e42df3804e7ec096f111a093fc176ef7",
+      "sourceBytes": 372401,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 240
+      },
+      "startFrame": 0,
+      "endFrame": 105,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 106
+      },
+      "sha256": "8c287f1d31b8fd32e82c03d05841c320edeeff900752314d2cb47ffa2594e5cd",
+      "bytes": 360430,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=0:end_frame=106,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "9f27b87b50e9f5ce52ce25c933a4625966006ecce1d9c62a849cfc52a402a911"
+    },
+    {
+      "id": "bowl_3964-ebenchfinetune",
+      "path": "assets/video/clips/bowl_3964-ebenchfinetune.mp4",
+      "canonicalRoute": "/sim-scaling/bowl_3964/ur7e_sharpa_str_r90_12s_ebenchfinetune_demo00.mp4",
+      "sourceSha256": "bbf762d11e6e9b7ad6511bd150373de22c645bd54f54430f86367136061b67aa",
+      "sourceBytes": 8027436,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 359,
+      "naturalEnd": true,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "sha256": "74dfe5e194eaa4b3add6f2fa52070bae1b25b2131fbcf2ef1a21694ef5a0bd3a",
+      "bytes": 8027437,
+      "mode": "remuxed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "copy",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "5c41730916af4d3ad131db0cfad7b9810c5e07508c94f4c28b0ecd900143dbe9"
+    },
+    {
+      "id": "bowl_3964-ebenchscratch",
+      "path": "assets/video/clips/bowl_3964-ebenchscratch.mp4",
+      "canonicalRoute": "/sim-scaling/bowl_3964/ur7e_sharpa_str_r90_12s_ebenchscratch_demo00.mp4",
+      "sourceSha256": "f53efc9f180285a6961480239bc156382a60a4a221feb01c7298dd979a47935a",
+      "sourceBytes": 7746832,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 359,
+      "naturalEnd": true,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "sha256": "e013e3d8aff2b82b7224df73f886126b9038c1ff321b776f358360487e2f77b9",
+      "bytes": 7746833,
+      "mode": "remuxed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "copy",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "a262c5e5b7bd59c67153d8c965117415138a25fe4a57b1c799094c548b56b790"
+    },
+    {
+      "id": "detergent_1-obj1",
+      "path": "assets/video/clips/detergent_1-obj1.mp4",
+      "canonicalRoute": "/sim-scaling/detergent_1/ur7e_sharpa_str_r90_12s_obj1_demo13.mp4",
+      "sourceSha256": "6eb776f3d731612e77f8a908dfdb9353c85e99624cb9977faac13f48ef6e66f1",
+      "sourceBytes": 4591528,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 198
+      },
+      "startFrame": 0,
+      "endFrame": 197,
+      "naturalEnd": true,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 198
+      },
+      "sha256": "e3496ffae69c24ef172bd332978df09aa7d1d5ac4db7effc0b7ab6fec5ae7da5",
+      "bytes": 4591529,
+      "mode": "remuxed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "copy",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "44e0651a92ace8e3d379e74f632e9afcc3f6fe28b79991acadcf4bf88832fa4a"
+    },
+    {
+      "id": "detergent_1-obj20",
+      "path": "assets/video/clips/detergent_1-obj20.mp4",
+      "canonicalRoute": "/sim-scaling/detergent_1/ur7e_sharpa_str_r90_12s_obj20_demo13.mp4",
+      "sourceSha256": "fa59da4220f4bf6b4a807fcc1312291c0c8540d5f7c84cbb799889dcc2662f0a",
+      "sourceBytes": 7636526,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 359,
+      "naturalEnd": true,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "sha256": "3941f38a6ae9401714a3a518830229b44231c972be71426b9da9ccdf19336f3c",
+      "bytes": 7636527,
+      "mode": "remuxed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "copy",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "d84a29b106716b706ed9e478ed5cd8442c574aeb99b0c741ab23d85fd346b54c"
+    },
+    {
+      "id": "filter-discard",
+      "path": "assets/video/clips/filter-discard.mp4",
+      "canonicalRoute": "/media/filter/discard.mp4",
+      "sourceSha256": "c0280858b9846483f1bcf8947149f36a311e6747f95d919e8dee838fe372d630",
+      "sourceBytes": 210842,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1320,
+        "height": 680,
+        "fps": "30/1",
+        "frameCount": 99
+      },
+      "startFrame": 0,
+      "endFrame": 98,
+      "naturalEnd": true,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1320,
+        "height": 680,
+        "fps": "30/1",
+        "frameCount": 99
+      },
+      "sha256": "23c1d96147f47c755c5d692a2cbd279ab2db0b59cb49637760e77350b58420c2",
+      "bytes": 210842,
+      "mode": "remuxed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "copy",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "615745fab3ca91ace1a705106bb9e5cab6f55b019b24c9c12f3893ef1dff607e"
+    },
+    {
+      "id": "filter-retain",
+      "path": "assets/video/clips/filter-retain.mp4",
+      "canonicalRoute": "/media/filter/retain.mp4",
+      "sourceSha256": "ab5920836d6bd1fc0cfa471f4ad35dbf0a80482d346cbcdd8f440be3e9e69efe",
+      "sourceBytes": 214915,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1320,
+        "height": 680,
+        "fps": "30/1",
+        "frameCount": 99
+      },
+      "startFrame": 0,
+      "endFrame": 98,
+      "naturalEnd": true,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1320,
+        "height": 680,
+        "fps": "30/1",
+        "frameCount": 99
+      },
+      "sha256": "087744b045aafc791975baaca097c282b3339bfebfbd6b6a0e30caacdebb1929",
+      "bytes": 214915,
+      "mode": "remuxed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "copy",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "282d2c3251e39d71421208809e56775c0fb78f2580d6ca7c25924c62ac676798"
+    },
+    {
+      "id": "fork_ae48-obj1",
+      "path": "assets/video/clips/fork_ae48-obj1.mp4",
+      "canonicalRoute": "/sim-scaling/fork_ae48/ur7e_sharpa_str_r90_12s_obj1_demo12.mp4",
+      "sourceSha256": "2169e8dcced35399aa2d8e1696634b039245bbf4b84a8dc5a3851786242de531",
+      "sourceBytes": 8657084,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 359,
+      "naturalEnd": true,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "sha256": "e71a0c9c291c2e1b7085e1a6ca83f0b85d5aa8d19184e50e695d0085771bb4e1",
+      "bytes": 8657085,
+      "mode": "remuxed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "copy",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "31a6538f09d60165a2a08827a5fb693bf3b62a6c28cda8a4b1d04325d2e24e29"
+    },
+    {
+      "id": "fork_ae48-obj20",
+      "path": "assets/video/clips/fork_ae48-obj20.mp4",
+      "canonicalRoute": "/sim-scaling/fork_ae48/ur7e_sharpa_str_r90_12s_obj20_demo12.mp4",
+      "sourceSha256": "9e00be1a3e462bb64f5860fb9e993ae45e1e3fa15f28676b3f8843003620bd5d",
+      "sourceBytes": 8773789,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 120,
+      "endFrame": 359,
+      "naturalEnd": true,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 240
+      },
+      "sha256": "1c8b55ac374dfff0b03b1465b730e5fa461633ec38cf65d32c0edbf9c95366c9",
+      "bytes": 1128224,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=120:end_frame=360,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "bbd98890afea57021b7722934af26c9cafde860b6856d93fe2d9c8a9e13a09bc"
+    },
+    {
+      "id": "hammer-robustness",
+      "path": "assets/video/clips/hammer-robustness.mp4",
+      "canonicalRoute": "/media/real/hammer-robustness.mp4",
+      "sourceSha256": "b2baf91fee0085b6452b24fe04df1ef63634ed4407b8fcd4c8fa7ce4fe7aab20",
+      "sourceBytes": 6637204,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 960,
+        "height": 960,
+        "fps": "30/1",
+        "frameCount": 549
+      },
+      "startFrame": 0,
+      "endFrame": 548,
+      "naturalEnd": true,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 960,
+        "height": 960,
+        "fps": "30/1",
+        "frameCount": 549
+      },
+      "sha256": "a0c3c6c39217908c80e8ffc49504d2c263c42044348bd4036720a1266c076ada",
+      "bytes": 6637200,
+      "mode": "remuxed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "copy",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "c4d4b101dbcddc254dfdd9a135cc1bcce530dc558d67db7c3545d8fef8c34443"
+    },
+    {
+      "id": "kuka_sharpa-bleach",
+      "path": "assets/video/clips/kuka_sharpa-bleach.mp4",
+      "canonicalRoute": "/sim-kuka/bleach/kuka_sharpa_str_r90_12s_demo02.mp4",
+      "sourceSha256": "f47fced6b85a86c730fdf81356a98de9601ce53741243ceec2faa72c37f64b25",
+      "sourceBytes": 7317892,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 170,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 171
+      },
+      "sha256": "013c0f8734f090ad703b5ff66fec306f4825719330b482c899651a4df42f21d6",
+      "bytes": 816953,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=0:end_frame=171,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "2fdcf3dde1e96ab7b5509b9be4319e8068fc66ce465104bd6571d7bcd2d7536a"
+    },
+    {
+      "id": "kuka_sharpa-bowl",
+      "path": "assets/video/clips/kuka_sharpa-bowl.mp4",
+      "canonicalRoute": "/sim-kuka/bowl/kuka_sharpa_str_r90_12s_demo14.mp4",
+      "sourceSha256": "441846de588fbd66a21e52720305e9733f2fd6ad33799974cd0590c1c7fd8c56",
+      "sourceBytes": 7798616,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 200,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 201
+      },
+      "sha256": "ab0de540ec8f8534aea096fa27c1f4ebba33f5d00d7d2946bc1a7ca77a2189c6",
+      "bytes": 989163,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=0:end_frame=201,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "694f313043f65360fea5e7dec257a8d1c78d7c4eebf9b8b31bb88bef8925a1a8"
+    },
+    {
+      "id": "kuka_sharpa-wood_block",
+      "path": "assets/video/clips/kuka_sharpa-wood_block.mp4",
+      "canonicalRoute": "/sim-kuka/wood_block/kuka_sharpa_str_r90_12s_demo15.mp4",
+      "sourceSha256": "921b91183866e8146adef53297c297b49089bd0f53ddcde3428ab3dde6324ec9",
+      "sourceBytes": 7662732,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 242,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 243
+      },
+      "sha256": "ce0b4e79a97f0eb7965029812fcea8369b12cc35a31ec13f2789a46e57f53112",
+      "bytes": 1123901,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=0:end_frame=243,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "6df5edfe5980d78ae5e369fb65b7a6113d16213f0c849bb7f5f5ba8cffc7d24f"
+    },
+    {
+      "id": "mustard-robustness",
+      "path": "assets/video/clips/mustard-robustness.mp4",
+      "canonicalRoute": "/media/real/mustard-robustness.mp4",
+      "sourceSha256": "d0fad5b0bf0cbbf3dfb13ada83d345dd3936dce1973a80b0cce99e71d5d28223",
+      "sourceBytes": 7136805,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 960,
+        "height": 960,
+        "fps": "30/1",
+        "frameCount": 548
+      },
+      "startFrame": 0,
+      "endFrame": 547,
+      "naturalEnd": true,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 960,
+        "height": 960,
+        "fps": "30/1",
+        "frameCount": 548
+      },
+      "sha256": "118151a0173b9a928d3b13774a3e216644148919b146043d207732d3a97116f1",
+      "bytes": 7136801,
+      "mode": "remuxed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "copy",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "001917cd950b2741a6e60ed1e50c9b25f354289faaea22b5a26755b6ea8c4101"
+    },
+    {
+      "id": "real-hammer",
+      "path": "assets/video/clips/real-hammer.mp4",
+      "canonicalRoute": "/media/real/hammer.mp4",
+      "sourceSha256": "fc65c9ddce87aba8ac26e9139a49f01d4d6ef39e5e8f604bf0badd84e2153c77",
+      "sourceBytes": 3738712,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 960,
+        "height": 960,
+        "fps": "30/1",
+        "frameCount": 290
+      },
+      "startFrame": 0,
+      "endFrame": 280,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 960,
+        "height": 960,
+        "fps": "30/1",
+        "frameCount": 281
+      },
+      "sha256": "c6e9d0fee39cd8ca8d3097ffd89d825918b6f8454a21888e606e78e3e06e6093",
+      "bytes": 3551493,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=0:end_frame=281,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "d69398b7f84259558c4b1d9272e9dc1e98c9b75d5078446bdaad57b1011a1553"
+    },
+    {
+      "id": "real-hammer2",
+      "path": "assets/video/clips/real-hammer2.mp4",
+      "canonicalRoute": "/media/real/hammer2.mp4",
+      "sourceSha256": "f1de14ddc91963ffe23195ae7847770acdf7479425a4dea6fca0a0084678dc3f",
+      "sourceBytes": 3417875,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 960,
+        "height": 960,
+        "fps": "30/1",
+        "frameCount": 265
+      },
+      "startFrame": 0,
+      "endFrame": 264,
+      "naturalEnd": true,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 960,
+        "height": 960,
+        "fps": "30/1",
+        "frameCount": 265
+      },
+      "sha256": "4f5e258e9963fb61acd3ab916d9fc72fc2887ddf360daa731f8819e4c6d17a49",
+      "bytes": 3417867,
+      "mode": "remuxed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "copy",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "cf2d36c231aa9b90b380fed87006a5670c1a4b315d5a52ef4cd7f7efada71122"
+    },
+    {
+      "id": "real-mustard",
+      "path": "assets/video/clips/real-mustard.mp4",
+      "canonicalRoute": "/media/real/mustard.mp4",
+      "sourceSha256": "f40f7129c563cdc65ad29d06cc6f938aff685243f4d4d1cf7c844c32d5e2e1ba",
+      "sourceBytes": 3987659,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 960,
+        "height": 960,
+        "fps": "30/1",
+        "frameCount": 391
+      },
+      "startFrame": 0,
+      "endFrame": 210,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 960,
+        "height": 960,
+        "fps": "30/1",
+        "frameCount": 211
+      },
+      "sha256": "46753f48dbea20b5a7204a56120115d014e4fdf9298990537afc8f36847abcaf",
+      "bytes": 2493519,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=0:end_frame=211,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "b0bbb297f29d2208255d5ef46ea914ca02b7baad04271487fed1f9f2a61f5f7d"
+    },
+    {
+      "id": "real-mustard2",
+      "path": "assets/video/clips/real-mustard2.mp4",
+      "canonicalRoute": "/media/real/mustard2.mp4",
+      "sourceSha256": "a5037dd18519003454225328bf515c5e153a3aacb2f713a82f803b830ec270be",
+      "sourceBytes": 2084336,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 960,
+        "height": 960,
+        "fps": "30/1",
+        "frameCount": 190
+      },
+      "startFrame": 0,
+      "endFrame": 189,
+      "naturalEnd": true,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 960,
+        "height": 960,
+        "fps": "30/1",
+        "frameCount": 190
+      },
+      "sha256": "bbda8b6f176a6d2885adf5b3164252f80b675b416667d2639ebf3f6b6f0a5d60",
+      "bytes": 2084328,
+      "mode": "remuxed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "copy",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "a1c9936c96d4e05a22697224cf2c77fd467d0aa132bed59a7eb0c24133f8410f"
+    },
+    {
+      "id": "real-pringles",
+      "path": "assets/video/clips/real-pringles.mp4",
+      "canonicalRoute": "/media/real/pringles.mp4",
+      "sourceSha256": "ce4bad1d22077351886a3776dd643168e5eba2074fe35b5945c78b61b1716286",
+      "sourceBytes": 3898110,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 960,
+        "height": 960,
+        "fps": "30/1",
+        "frameCount": 391
+      },
+      "startFrame": 0,
+      "endFrame": 240,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 960,
+        "height": 960,
+        "fps": "30/1",
+        "frameCount": 241
+      },
+      "sha256": "5a7204a7786b2151fd3a8e925c8141ef12f9aecf1834b2e2cfa722363ed574b3",
+      "bytes": 2652191,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=0:end_frame=241,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "bbcf83ef2e4a732c773b2fd78f76ef5a1ce3b7495db73521cf8907e7234a7739"
+    },
+    {
+      "id": "real-pringles2",
+      "path": "assets/video/clips/real-pringles2.mp4",
+      "canonicalRoute": "/media/real/pringles2.mp4",
+      "sourceSha256": "f48a5326f576a1a316f1ce348ef51f4cca7d5ee8123dc23989b9f743e34e6ae2",
+      "sourceBytes": 1574836,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 960,
+        "height": 960,
+        "fps": "30/1",
+        "frameCount": 116
+      },
+      "startFrame": 0,
+      "endFrame": 115,
+      "naturalEnd": true,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 960,
+        "height": 960,
+        "fps": "30/1",
+        "frameCount": 116
+      },
+      "sha256": "9270c4091d96ca1665fd2af840f77a2952d9b8b98ec4df4b228e2490f27a6194",
+      "bytes": 1574828,
+      "mode": "remuxed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "copy",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "98f918d55a679c87819c33e2911785b814e580770737cdcaa83e5a1299e91a27"
+    },
+    {
+      "id": "remote_63f5-ebenchfinetune",
+      "path": "assets/video/clips/remote_63f5-ebenchfinetune.mp4",
+      "canonicalRoute": "/sim-scaling/remote_63f5/ur7e_sharpa_str_r90_12s_ebenchfinetune_demo17.mp4",
+      "sourceSha256": "74f5549397825f194920cb294fc6573d7c1b012e345509e1f4ab0fa8c379f6ae",
+      "sourceBytes": 7673859,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 359,
+      "naturalEnd": true,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "sha256": "b300a81b0060f5c3674fff0829a8732a9548216574ff284e020ffd9a1bf3a83b",
+      "bytes": 7673860,
+      "mode": "remuxed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "copy",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "3cb6a30dd2fcce36120ec4664751558e339d558630b9c5f64de6ae903b6ebf02"
+    },
+    {
+      "id": "remote_63f5-ebenchscratch",
+      "path": "assets/video/clips/remote_63f5-ebenchscratch.mp4",
+      "canonicalRoute": "/sim-scaling/remote_63f5/ur7e_sharpa_str_r90_12s_ebenchscratch_demo17.mp4",
+      "sourceSha256": "7016c558b145d7e92bcd1a5b5bf87a0683d61d3d2eb4ebe20ef5f1a9d4479cab",
+      "sourceBytes": 8490080,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 359,
+      "naturalEnd": true,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "sha256": "7ad79eafb641fbb18fe8b92bfb07947608ee98c98ee7c73d6d5b1f0f5a8c0788",
+      "bytes": 8490081,
+      "mode": "remuxed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "copy",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "30d9046caf6345892b9eb5e4d3362c15a8f08f2f18ea9959f5406d53db510ecb"
+    },
+    {
+      "id": "ur7e_robotiq-cracker_box",
+      "path": "assets/video/clips/ur7e_robotiq-cracker_box.mp4",
+      "canonicalRoute": "/sim-robotiq/cracker_box/ur7e_robotiq_str_r90_12s_demo13.mp4",
+      "sourceSha256": "a2fe0ddfda311ffad1118bb1c1b22484d7cab0b0e482c815fb862567ac37419b",
+      "sourceBytes": 5219062,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 140,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 141
+      },
+      "sha256": "623926c3e4ac6ca8ea8e27899ccad2970f5c6d27025fbe23ae06c0ba56c9355b",
+      "bytes": 705980,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=0:end_frame=141,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "9c32f622feae29140a67f238943e63ce8bcc1a63153f6a5d3ce97c5f849ce7c7"
+    },
+    {
+      "id": "ur7e_robotiq-mug",
+      "path": "assets/video/clips/ur7e_robotiq-mug.mp4",
+      "canonicalRoute": "/sim-robotiq/mug/ur7e_robotiq_str_r90_12s_demo02.mp4",
+      "sourceSha256": "5bf61048ffc37351be7bcac8ea5713be65718e09b4c2b600369c6b8487155e42",
+      "sourceBytes": 4868771,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 132,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 133
+      },
+      "sha256": "ce39f8bc494308d045a836df84f1c9ceab9072e5f88da7b82284ddf903703ede",
+      "bytes": 607895,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=0:end_frame=133,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "a5eca63a6d773919008b66fc8c3a9fb24c0bc4becf5257d8c05737312e4b3575"
+    },
+    {
+      "id": "ur7e_robotiq-mustard",
+      "path": "assets/video/clips/ur7e_robotiq-mustard.mp4",
+      "canonicalRoute": "/sim-robotiq/mustard/ur7e_robotiq_str_r90_12s_demo02.mp4",
+      "sourceSha256": "2483b899b486a9d4ceddfa3d668b5bd1f4db52f25fbc278a8c93fbad88cad91b",
+      "sourceBytes": 4709405,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 145,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 146
+      },
+      "sha256": "7bee6683122f43e4594d82927a080c7b05a6dfd45d64144b4238527039198af7",
+      "bytes": 654363,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=0:end_frame=146,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "1219b29012fd382095777b1e5949f24f03d61bb00e63ede7d6fe5b2a86b3abb3"
+    },
+    {
+      "id": "ur7e_sharpa-banana",
+      "path": "assets/video/clips/ur7e_sharpa-banana.mp4",
+      "canonicalRoute": "/sim-sharpa/banana/ur7e_sharpa_str_r90_12s_demo12.mp4",
+      "sourceSha256": "d95ff1ca8a570602ca37cd4e77aba60510bc34aef99fa456e2f49d10d6de1ce7",
+      "sourceBytes": 7872986,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 224,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 225
+      },
+      "sha256": "4e89fce42729f8d2955bb7372b0fa81b79f695b36ba64e4f5962bc85aa455179",
+      "bytes": 1045301,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=0:end_frame=225,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "3ea7674b6121d7160e085bb5f38ab720795bce834849a4b74b292641e19104b5"
+    },
+    {
+      "id": "ur7e_sharpa-bowl",
+      "path": "assets/video/clips/ur7e_sharpa-bowl.mp4",
+      "canonicalRoute": "/sim-sharpa/bowl/ur7e_sharpa_str_r90_12s_demo05.mp4",
+      "sourceSha256": "e1ed56c036f0b8482f9e25a7eed1e9baf09594ef783972569a838c2e101a01be",
+      "sourceBytes": 7986828,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 159,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 160
+      },
+      "sha256": "6aed175c7aed0a2a4836b3b8eb8aa89319fc5ba80c6cac67633c44ba6a578b8f",
+      "bytes": 849749,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=0:end_frame=160,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "d973a8b94983694de14dce622c60a847d5dfaf5b4eca216882f3be750e0fb041"
+    },
+    {
+      "id": "ur7e_sharpa-cracker_box",
+      "path": "assets/video/clips/ur7e_sharpa-cracker_box.mp4",
+      "canonicalRoute": "/sim-sharpa/cracker_box/ur7e_sharpa_str_r90_12s_demo13.mp4",
+      "sourceSha256": "d35205a26867295e29614e1f920ea023ecfb0ca2f24995a22cbed9a5b2f47ae9",
+      "sourceBytes": 7743412,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 149,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 150
+      },
+      "sha256": "3aee4d36b20867feac9c02da62a7b573da7f4e8dcb9bf94ed7434545b0d0815a",
+      "bytes": 830906,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=0:end_frame=150,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "26c6d5efc8c5d02942e67ff0d184f13eb2660d100f2ccffafe68b3a4d68247a5"
+    },
+    {
+      "id": "ur7e_sharpa-extra_large_clamp",
+      "path": "assets/video/clips/ur7e_sharpa-extra_large_clamp.mp4",
+      "canonicalRoute": "/sim-sharpa/extra_large_clamp/ur7e_sharpa_str_r90_12s_demo07.mp4",
+      "sourceSha256": "3b71ab62bfde85166fbad059e99dfc3cbc065bd654de1ecc1a92149784369994",
+      "sourceBytes": 7964191,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 211,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 212
+      },
+      "sha256": "50e5f6ba80fa1684f18c20884ff9e79b89e6dc4430a7ec0d28429717e2999953",
+      "bytes": 1088882,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=0:end_frame=212,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "91ec118438e23268368d1d6b68626db5c2a67566d8a7601c638b77c34d7fef96"
+    },
+    {
+      "id": "ur7e_sharpa-mustard",
+      "path": "assets/video/clips/ur7e_sharpa-mustard.mp4",
+      "canonicalRoute": "/sim-sharpa/mustard/ur7e_sharpa_str_r90_12s_demo05.mp4",
+      "sourceSha256": "023db56d604ba7164f54066b4bb5437b38f86330b2db77e135b2750759181b34",
+      "sourceBytes": 8011530,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 15,
+      "endFrame": 199,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 185
+      },
+      "sha256": "e26ecf8ac77ca075af0603edfaa663b187e1f11eaf5e5e8101e7727d2e111849",
+      "bytes": 947676,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=15:end_frame=200,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "58cd6b8ed7f4f82d0ea27945902f9f977182243024ad667e7d686bba21d61dec"
+    },
+    {
+      "id": "ur7e_sharpa-powerdrill",
+      "path": "assets/video/clips/ur7e_sharpa-powerdrill.mp4",
+      "canonicalRoute": "/sim-sharpa/powerdrill/ur7e_sharpa_str_r90_12s_demo13.mp4",
+      "sourceSha256": "12ae4f41565e63429c5a50def46f421bf91d4332332cd88b7e624a25030f6e12",
+      "sourceBytes": 7978810,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 138,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 139
+      },
+      "sha256": "1e38859c968e59cac592932698b953084794351ab55d4204dc510bfb09525c31",
+      "bytes": 749707,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=0:end_frame=139,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "742b8f1013d895f0e8d526e442ce7ed66f440a91911c44c8c6ac2aca0d2761f5"
+    },
+    {
+      "id": "wood-block-exploration",
+      "path": "assets/video/clips/wood-block-exploration.mp4",
+      "canonicalRoute": "/draft/failures/wood_block_str_r00_demo03.mp4",
+      "sourceSha256": "0ef39fb109c5af47f7ba2cda43bfa87a5e5206add87ff9b9f9c691ece2f3cb8a",
+      "sourceBytes": 7361329,
+      "source": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 360
+      },
+      "startFrame": 0,
+      "endFrame": 90,
+      "naturalEnd": false,
+      "output": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "width": 1280,
+        "height": 720,
+        "fps": "30/1",
+        "frameCount": 91
+      },
+      "sha256": "fb4a30697060df127e94d53f7f23a9b5d8f45ed43479d4e901623c24606f2bdf",
+      "bytes": 508135,
+      "mode": "trimmed",
+      "recipe": {
+        "version": 1,
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "trim=start_frame=0:end_frame=91,setpts=PTS-STARTPTS",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "18",
+          "-preset",
+          "medium",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-r",
+          "30/1",
+          "-fps_mode",
+          "cfr",
+          "-map_metadata",
+          "-1",
+          "-movflags",
+          "+faststart"
+        ]
+      },
+      "cacheKey": "2784bdaeb54d8849a346fa25fd5f431edeec985d2fa267a1c25abccfc097dc7a"
+    }
+  ],
+  "summary": {
+    "clipCount": 32,
+    "sourceVideoBytes": 187366393,
+    "clipBytes": 95204601,
+    "bytesSaved": 92161792
+  }
+}

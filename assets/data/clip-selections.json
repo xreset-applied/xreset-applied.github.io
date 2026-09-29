@@ -1,0 +1,321 @@
+{
+  "version": 1,
+  "frameConvention": "Zero-based source frames at sourceFps. startFrame and numeric endFrame are inclusive; null endFrame means natural EOF, not a newly selected cut. An original stopFrame takes precedence; otherwise floor(end seconds \u00d7 source fps) selects the inclusive endpoint.",
+  "playback": "Physical clips loop at their encoded source speed; no browser selection offsets or playback-rate changes.",
+  "clips": [
+    {
+      "id": "ur7e_sharpa-banana",
+      "canonicalRoute": "/sim-sharpa/banana/ur7e_sharpa_str_r90_12s_demo12.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": 224,
+      "originalSelection": {
+        "end": 6.483333333333333,
+        "stopFrame": 194,
+        "successExtensionSeconds": 1
+      }
+    },
+    {
+      "id": "ur7e_sharpa-powerdrill",
+      "canonicalRoute": "/sim-sharpa/powerdrill/ur7e_sharpa_str_r90_12s_demo13.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": 138,
+      "originalSelection": {
+        "end": 3.6166666666666667,
+        "stopFrame": 108,
+        "successExtensionSeconds": 1
+      }
+    },
+    {
+      "id": "ur7e_sharpa-extra_large_clamp",
+      "canonicalRoute": "/sim-sharpa/extra_large_clamp/ur7e_sharpa_str_r90_12s_demo07.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": 211,
+      "originalSelection": {
+        "end": 6.05,
+        "stopFrame": 181,
+        "successExtensionSeconds": 1
+      }
+    },
+    {
+      "id": "ur7e_robotiq-mug",
+      "canonicalRoute": "/sim-robotiq/mug/ur7e_robotiq_str_r90_12s_demo02.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": 132,
+      "originalSelection": {
+        "end": 3.4166666666666665,
+        "stopFrame": 102,
+        "successExtensionSeconds": 1
+      }
+    },
+    {
+      "id": "ur7e_robotiq-mustard",
+      "canonicalRoute": "/sim-robotiq/mustard/ur7e_robotiq_str_r90_12s_demo02.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": 145,
+      "originalSelection": {
+        "end": 3.85,
+        "stopFrame": 115,
+        "successExtensionSeconds": 1
+      }
+    },
+    {
+      "id": "ur7e_robotiq-cracker_box",
+      "canonicalRoute": "/sim-robotiq/cracker_box/ur7e_robotiq_str_r90_12s_demo13.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": 140,
+      "originalSelection": {
+        "end": 3.683333333333333,
+        "stopFrame": 110,
+        "successExtensionSeconds": 1
+      }
+    },
+    {
+      "id": "kuka_sharpa-bleach",
+      "canonicalRoute": "/sim-kuka/bleach/kuka_sharpa_str_r90_12s_demo02.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": 170,
+      "originalSelection": {
+        "end": 4.683333333333334,
+        "stopFrame": 140,
+        "successExtensionSeconds": 1
+      }
+    },
+    {
+      "id": "kuka_sharpa-bowl",
+      "canonicalRoute": "/sim-kuka/bowl/kuka_sharpa_str_r90_12s_demo14.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": 200,
+      "originalSelection": {
+        "end": 5.683333333333334,
+        "stopFrame": 170,
+        "successExtensionSeconds": 1
+      }
+    },
+    {
+      "id": "kuka_sharpa-wood_block",
+      "canonicalRoute": "/sim-kuka/wood_block/kuka_sharpa_str_r90_12s_demo15.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": 242,
+      "originalSelection": {
+        "end": 7.083333333333333,
+        "stopFrame": 212,
+        "successExtensionSeconds": 1
+      }
+    },
+    {
+      "id": "ur7e_sharpa-mustard",
+      "canonicalRoute": "/sim-sharpa/mustard/ur7e_sharpa_str_r90_12s_demo05.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 15,
+      "endFrame": 199,
+      "originalSelection": {
+        "start": 0.5,
+        "end": 5.65,
+        "stopFrame": 169,
+        "successExtensionSeconds": 1
+      }
+    },
+    {
+      "id": "ur7e_sharpa-cracker_box",
+      "canonicalRoute": "/sim-sharpa/cracker_box/ur7e_sharpa_str_r90_12s_demo13.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": 149,
+      "originalSelection": {
+        "end": 3.9833333333333334,
+        "stopFrame": 119,
+        "successExtensionSeconds": 1
+      }
+    },
+    {
+      "id": "ur7e_sharpa-bowl",
+      "canonicalRoute": "/sim-sharpa/bowl/ur7e_sharpa_str_r90_12s_demo05.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": 159,
+      "originalSelection": {
+        "end": 4.316666666666666,
+        "stopFrame": 129,
+        "successExtensionSeconds": 1
+      }
+    },
+    {
+      "id": "fork_ae48-obj1",
+      "canonicalRoute": "/sim-scaling/fork_ae48/ur7e_sharpa_str_r90_12s_obj1_demo12.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": null
+    },
+    {
+      "id": "fork_ae48-obj20",
+      "canonicalRoute": "/sim-scaling/fork_ae48/ur7e_sharpa_str_r90_12s_obj20_demo12.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 120,
+      "endFrame": null,
+      "originalSelection": {
+        "start": 4
+      }
+    },
+    {
+      "id": "detergent_1-obj1",
+      "canonicalRoute": "/sim-scaling/detergent_1/ur7e_sharpa_str_r90_12s_obj1_demo13.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": null
+    },
+    {
+      "id": "detergent_1-obj20",
+      "canonicalRoute": "/sim-scaling/detergent_1/ur7e_sharpa_str_r90_12s_obj20_demo13.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": null
+    },
+    {
+      "id": "bowl_3964-ebenchscratch",
+      "canonicalRoute": "/sim-scaling/bowl_3964/ur7e_sharpa_str_r90_12s_ebenchscratch_demo00.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": null
+    },
+    {
+      "id": "bowl_3964-ebenchfinetune",
+      "canonicalRoute": "/sim-scaling/bowl_3964/ur7e_sharpa_str_r90_12s_ebenchfinetune_demo00.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": null
+    },
+    {
+      "id": "remote_63f5-ebenchscratch",
+      "canonicalRoute": "/sim-scaling/remote_63f5/ur7e_sharpa_str_r90_12s_ebenchscratch_demo17.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": null
+    },
+    {
+      "id": "remote_63f5-ebenchfinetune",
+      "canonicalRoute": "/sim-scaling/remote_63f5/ur7e_sharpa_str_r90_12s_ebenchfinetune_demo17.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": null
+    },
+    {
+      "id": "real-mustard",
+      "canonicalRoute": "/media/real/mustard.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": 210,
+      "originalSelection": {
+        "end": 6.016666666666667,
+        "stopFrame": 180,
+        "successExtensionSeconds": 1
+      }
+    },
+    {
+      "id": "real-pringles",
+      "canonicalRoute": "/media/real/pringles.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": 240,
+      "originalSelection": {
+        "end": 7.016666666666667,
+        "stopFrame": 210,
+        "successExtensionSeconds": 1
+      }
+    },
+    {
+      "id": "real-hammer",
+      "canonicalRoute": "/media/real/hammer.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": 280,
+      "originalSelection": {
+        "end": 8.35,
+        "stopFrame": 250,
+        "successExtensionSeconds": 1
+      }
+    },
+    {
+      "id": "real-mustard2",
+      "canonicalRoute": "/media/real/mustard2.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": null
+    },
+    {
+      "id": "real-pringles2",
+      "canonicalRoute": "/media/real/pringles2.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": null
+    },
+    {
+      "id": "real-hammer2",
+      "canonicalRoute": "/media/real/hammer2.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": null
+    },
+    {
+      "id": "wood-block-exploration",
+      "canonicalRoute": "/draft/failures/wood_block_str_r00_demo03.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": 90,
+      "originalSelection": {
+        "start": 0,
+        "end": 3
+      }
+    },
+    {
+      "id": "banana-reset",
+      "canonicalRoute": "/draft/reset_eval/replay/reset_banana_demo00_env0_ep0.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": 105,
+      "poster": true,
+      "originalSelection": {
+        "start": 0,
+        "end": 3.5
+      }
+    },
+    {
+      "id": "filter-retain",
+      "canonicalRoute": "/media/filter/retain.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": null,
+      "note": "The canonical file already encodes 0.25x speed. Retain every frame and do not apply another slowdown."
+    },
+    {
+      "id": "filter-discard",
+      "canonicalRoute": "/media/filter/discard.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": null,
+      "note": "The canonical file already encodes 0.25x speed. Retain every frame and do not apply another slowdown."
+    },
+    {
+      "id": "mustard-robustness",
+      "canonicalRoute": "/media/real/mustard-robustness.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": null
+    },
+    {
+      "id": "hammer-robustness",
+      "canonicalRoute": "/media/real/hammer-robustness.mp4",
+      "sourceFps": "30/1",
+      "startFrame": 0,
+      "endFrame": null
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# Heavy media is ignored except the full overview and source-backed recordings
+# explicitly packaged for the native page. No external media host is needed.
+*.mp4
+*.mov
+*.gif
+*.webm
+!assets/video/*.mp4
+!assets/video/clips/*.mp4
+!assets/video/sim-grid.gif
+
+# Python preview server env
+.venv/
+__pycache__/
+*.pyc
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
